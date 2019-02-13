@@ -50,6 +50,8 @@ for i in "${in_arr[@]}"; do
     PLUGIN_INCLUDE_STR="$PLUGIN_INCLUDE_STR -i $i"
 done
 
+echo "start"
+
 lftp -e "set xfer:log 1; \
   set ftp:ssl-allow $PLUGIN_SECURE; \
   set ftp:ssl-force $PLUGIN_SECURE; \

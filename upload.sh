@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -z "$FTP_USERNAME" ]; then
+if [ -z "$PLUGIN_USERNAME" ]; then
     echo "Need to set username"
     exit 1
 fi
@@ -58,4 +58,4 @@ lftp -e "set xfer:log 1; \
   set ssl:check-hostname $PLUGIN_VERIFY; \
   $PLUGIN_CLEAN_DIR; \
   mirror --verbose $PLUGIN_CHMOD -R $PLUGIN_INCLUDE_STR $PLUGIN_EXCLUDE_STR $(pwd)$PLUGIN_SRC_DIR $PLUGIN_DEST_DIR" \
-  -u $FTP_USERNAME,$FTP_PASSWORD $PLUGIN_HOSTNAME
+  -u $PLUGIN_USERNAME,$PLUGIN_PASSWORD $PLUGIN_HOSTNAME
